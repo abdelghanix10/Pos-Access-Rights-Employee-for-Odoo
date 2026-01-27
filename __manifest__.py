@@ -3,7 +3,7 @@
 # © 2025 Sensible Consulting Services (<https://sensiblecs.com/>)
 {
     'name': 'POS Access Rights Employee | Point of Sale Access Rights for Employees | Point of Sale Employee Access Management | POS Cashier Access Control | Point of Sale Cashier Permissions',
-    'version': '19.0.1.0',
+    'version': '19.0.1.1',
     'summary': '''The POS Employee Access Rights module enhances control over the POS interface by allowing 
         administrators to enable or disable key functionalities for each cashier. 
         It simplifies the management of multiple cashiers and ensures that POS operations are restricted based on user roles and responsibilities.
@@ -24,6 +24,18 @@
         Enable or Disable the Quantity (QTY) button in the Numpad.
         Enable or Disable the Discount button.
         Enable or Disable the Change Price option.
+
+        Dropdown Navbar Menu Controls:
+        ==============================
+        Hide or Show the entire Dropdown Navbar menu.
+        Hide or Show the Install App option.
+        Hide or Show the Cash In/Out option.
+        Hide or Show the Reload Data option.
+        Hide or Show the Create Product option.
+        Hide or Show the Barcode Scanner option.
+        Hide or Show the Print Report option.
+        Hide or Show the Backend option.
+        Hide or Show the Close Register option.
     ''',
     'category': 'Sales/Point of Sale',
     'author': 'Sensible Consulting Services',

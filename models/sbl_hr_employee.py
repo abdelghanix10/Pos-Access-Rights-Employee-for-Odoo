@@ -18,6 +18,15 @@ class ResUsers(models.Model):
     sbl_disable_pos_discount_button = fields.Boolean(related='employee_id.sbl_disable_pos_discount_button', readonly=False)
     sbl_hide_pos_payment = fields.Boolean(related='employee_id.sbl_hide_pos_payment', readonly=False)
     sbl_disable_pos_change_price = fields.Boolean(related='employee_id.sbl_disable_pos_change_price', readonly=False)
+    sbl_hide_pos_dropdown_navbar = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_navbar', readonly=False)
+    sbl_hide_pos_dropdown_install_app = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_install_app', readonly=False)
+    sbl_hide_pos_dropdown_cash_inout = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_cash_inout', readonly=False)
+    sbl_hide_pos_dropdown_reload_data = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_reload_data', readonly=False)
+    sbl_hide_pos_dropdown_create_product = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_create_product', readonly=False)
+    sbl_hide_pos_dropdown_barcode_scanner = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_barcode_scanner', readonly=False)
+    sbl_hide_pos_dropdown_print_report = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_print_report', readonly=False)
+    sbl_hide_pos_dropdown_backend = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_backend', readonly=False)
+    sbl_hide_pos_dropdown_close_register = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_close_register', readonly=False)
 
     @api.model
     def _load_pos_data_fields(self, config):
@@ -26,7 +35,12 @@ class ResUsers(models.Model):
             'sbl_hide_pos_new_order_button', 'sbl_hide_pos_delete_order_button',
             'sbl_hide_pos_customer_selection_button', 'sbl_hide_pos_actions_button',
             'sbl_hide_pos_numpad', 'sbl_disable_pos_numpad_plus_minus', 'sbl_disable_pos_qty',
-            'sbl_disable_pos_discount_button', 'sbl_hide_pos_payment', 'sbl_disable_pos_change_price'
+            'sbl_disable_pos_discount_button', 'sbl_hide_pos_payment', 'sbl_disable_pos_change_price',
+            'sbl_hide_pos_dropdown_navbar', 'sbl_hide_pos_dropdown_install_app',
+            'sbl_hide_pos_dropdown_cash_inout', 'sbl_hide_pos_dropdown_reload_data',
+            'sbl_hide_pos_dropdown_create_product', 'sbl_hide_pos_dropdown_barcode_scanner',
+            'sbl_hide_pos_dropdown_print_report', 'sbl_hide_pos_dropdown_backend',
+            'sbl_hide_pos_dropdown_close_register'
         ]
 
 class HrEmployeeBase(models.Model):
@@ -82,6 +96,51 @@ class HrEmployeeBase(models.Model):
         help='If checked, the Change Price functionality will be disabled for this employee in the POS interface.',
         default=False,
     )
+    sbl_hide_pos_dropdown_navbar = fields.Boolean(
+        string='Hide POS Dropdown Navbar',
+        help='If checked, the entire Dropdown menu in the navbar will be hidden for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_install_app = fields.Boolean(
+        string='Hide Install App',
+        help='If checked, the Install App option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_cash_inout = fields.Boolean(
+        string='Hide Cash In/Out',
+        help='If checked, the Cash In/Out option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_reload_data = fields.Boolean(
+        string='Hide Reload Data',
+        help='If checked, the Reload Data option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_create_product = fields.Boolean(
+        string='Hide Create Product',
+        help='If checked, the Create Product option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_barcode_scanner = fields.Boolean(
+        string='Hide Barcode Scanner',
+        help='If checked, the Barcode Scanner option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_print_report = fields.Boolean(
+        string='Hide Print Report',
+        help='If checked, the Print Report option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_backend = fields.Boolean(
+        string='Hide Backend',
+        help='If checked, the Backend option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_close_register = fields.Boolean(
+        string='Hide Close Register',
+        help='If checked, the Close Register option will be hidden in the dropdown menu.',
+        default=False,
+    )
 
     @api.model
     def _load_pos_data_fields(self, config):
@@ -90,5 +149,10 @@ class HrEmployeeBase(models.Model):
             'sbl_hide_pos_new_order_button', 'sbl_hide_pos_delete_order_button',
             'sbl_hide_pos_customer_selection_button', 'sbl_hide_pos_actions_button',
             'sbl_hide_pos_numpad', 'sbl_disable_pos_numpad_plus_minus', 'sbl_disable_pos_qty',
-            'sbl_disable_pos_discount_button', 'sbl_hide_pos_payment', 'sbl_disable_pos_change_price'
+            'sbl_disable_pos_discount_button', 'sbl_hide_pos_payment', 'sbl_disable_pos_change_price',
+            'sbl_hide_pos_dropdown_navbar', 'sbl_hide_pos_dropdown_install_app',
+            'sbl_hide_pos_dropdown_cash_inout', 'sbl_hide_pos_dropdown_reload_data',
+            'sbl_hide_pos_dropdown_create_product', 'sbl_hide_pos_dropdown_barcode_scanner',
+            'sbl_hide_pos_dropdown_print_report', 'sbl_hide_pos_dropdown_backend',
+            'sbl_hide_pos_dropdown_close_register'
         ]

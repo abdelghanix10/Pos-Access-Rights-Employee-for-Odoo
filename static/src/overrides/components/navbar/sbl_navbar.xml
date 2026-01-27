@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="point_of_sale.Navbar" t-inherit="point_of_sale.Navbar" t-inherit-mode="extension">
+        <!-- Hide the entire Dropdown menu when sbl_hide_pos_dropdown_navbar is true -->
+        <xpath expr="//Dropdown" position="attributes">
+            <attribute name="t-if">!this.pos.cashier?.sbl_hide_pos_dropdown_navbar</attribute>
+        </xpath>
+
+        <!-- Hide Install App dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'window.open(this.appUrl)')]" position="attributes">
+            <attribute name="t-if">!isDisplayStandalone and this.pos.cashier?._role != 'minimal' and !this.pos.cashier?.sbl_hide_pos_dropdown_install_app</attribute>
+        </xpath>
+
+        <!-- Hide Cash In/Out dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.pos.cashMove()')]" position="attributes">
+            <attribute name="t-if">showCashMoveButton and this.pos.cashier?._role != 'minimal' and !this.pos.cashier?.sbl_hide_pos_dropdown_cash_inout</attribute>
+        </xpath>
+
+        <!-- Hide Reload Data dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.reloadProducts()')]" position="attributes">
+            <attribute name="t-if">!this.pos.data.network.offline and !this.pos.cashier?.sbl_hide_pos_dropdown_reload_data</attribute>
+        </xpath>
+
+        <!-- Hide Create Product dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.pos.editProduct()')]" position="attributes">
+            <attribute name="t-if">showCreateProductButton and !this.pos.cashier?.sbl_hide_pos_dropdown_create_product</attribute>
+        </xpath>
+
+        <!-- Hide Barcode Scanner dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.onClickScan()')]" position="attributes">
+            <attribute name="t-if">isBarcodeScannerSupported() and this.pos.router.state.current == 'ProductScreen' and ui.isSmall and !pos.config.module_pos_restaurant and !this.pos.cashier?.sbl_hide_pos_dropdown_barcode_scanner</attribute>
+        </xpath>
+
+        <!-- Hide Print Report dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.showSaleDetails()')]" position="attributes">
+            <attribute name="t-if">hardwareProxy.printer and !this.pos.cashier?.sbl_hide_pos_dropdown_print_report</attribute>
+        </xpath>
+
+        <!-- Hide Backend dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'pos.closePos()')]" position="attributes">
+            <attribute name="t-if">!this.pos.cashier?.sbl_hide_pos_dropdown_backend</attribute>
+        </xpath>
+
+        <!-- Hide Close Register dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.pos.closeSession()')]" position="attributes">
+            <attribute name="t-if">!this.pos.cashier?.sbl_hide_pos_dropdown_close_register</attribute>
+        </xpath>
+    </t>
+
+</templates>

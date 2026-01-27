@@ -29,6 +29,25 @@
                             <field name="sbl_disable_pos_discount_button" widget="boolean_toggle" invisible="sbl_hide_pos_numpad"/>
                         </group>
                     </group>
+                    <group name="sbl_pos_dropdown_navbar" string="Dropdown Navbar Menu">
+                        <group>
+                            <field name="sbl_hide_pos_dropdown_navbar" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <group name="sbl_pos_dropdown_items" string="Dropdown Menu Items" invisible="sbl_hide_pos_dropdown_navbar">
+                        <group>
+                            <field name="sbl_hide_pos_dropdown_install_app" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_cash_inout" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_reload_data" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_create_product" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_barcode_scanner" widget="boolean_toggle"/>
+                        </group>
+                        <group>
+                            <field name="sbl_hide_pos_dropdown_print_report" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_backend" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_close_register" widget="boolean_toggle"/>
+                        </group>
+                    </group>
                 </page>
             </notebook>
         </field>

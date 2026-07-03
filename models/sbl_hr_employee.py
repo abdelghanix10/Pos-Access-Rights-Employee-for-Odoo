@@ -27,6 +27,7 @@ class ResUsers(models.Model):
     sbl_hide_pos_dropdown_print_report = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_print_report', readonly=False)
     sbl_hide_pos_dropdown_backend = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_backend', readonly=False)
     sbl_hide_pos_dropdown_close_register = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_close_register', readonly=False)
+    sbl_hide_pos_dropdown_total_session = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_total_session', readonly=False)
 
     @api.model
     def _load_pos_data_fields(self, config):
@@ -40,7 +41,7 @@ class ResUsers(models.Model):
             'sbl_hide_pos_dropdown_cash_inout', 'sbl_hide_pos_dropdown_reload_data',
             'sbl_hide_pos_dropdown_create_product', 'sbl_hide_pos_dropdown_barcode_scanner',
             'sbl_hide_pos_dropdown_print_report', 'sbl_hide_pos_dropdown_backend',
-            'sbl_hide_pos_dropdown_close_register'
+            'sbl_hide_pos_dropdown_close_register', 'sbl_hide_pos_dropdown_total_session'
         ]
 
 class HrEmployeeBase(models.Model):
@@ -139,6 +140,11 @@ class HrEmployeeBase(models.Model):
     sbl_hide_pos_dropdown_close_register = fields.Boolean(
         string='Hide Close Register',
         help='If checked, the Close Register option will be hidden in the dropdown menu.',
+        default=False,
+    )
+    sbl_hide_pos_dropdown_total_session = fields.Boolean(
+        string='Hide Total Session (Register)',
+        help='If checked, the Total Session (Register) item will be hidden in the dropdown menu.',
         default=False,
     )
 

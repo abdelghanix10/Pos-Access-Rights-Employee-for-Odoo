@@ -46,6 +46,20 @@
         <xpath expr="//DropdownItem[contains(@onSelected, 'this.pos.closeSession()')]" position="attributes">
             <attribute name="t-if">!this.pos.cashier?.sbl_hide_pos_dropdown_close_register</attribute>
         </xpath>
+        <!-- Total Session (Register) dropdown item -->
+        <xpath expr="//DropdownItem[contains(@onSelected, 'this.pos.closeSession()')]" position="before">
+            <DropdownItem t-if="!this.pos.cashier?.sbl_hide_pos_dropdown_total_session">
+                <t t-call-assets="web.assets_qweb" />
+                <TotalSession/>
+            </DropdownItem>
+        </xpath>
+    </t>
+
+    <t t-name="sensible_pos.TotalSession">
+        <div class="text-center" style="min-width:120px;">
+            <div class="font-weight-bold" style="line-height:1rem;">Total Session:</div>
+            <div class="h5 mb-0" t-esc="state.amount ? pos.env.utils.formatCurrency(state.amount) : '-'"/>
+        </div>
     </t>
 
 </templates>

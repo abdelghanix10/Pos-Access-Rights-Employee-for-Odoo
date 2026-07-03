@@ -46,6 +46,7 @@
                             <field name="sbl_hide_pos_dropdown_print_report" widget="boolean_toggle"/>
                             <field name="sbl_hide_pos_dropdown_backend" widget="boolean_toggle"/>
                             <field name="sbl_hide_pos_dropdown_close_register" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_dropdown_total_session" widget="boolean_toggle"/>
                         </group>
                     </group>
                 </page>

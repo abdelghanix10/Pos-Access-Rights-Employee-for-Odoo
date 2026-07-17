@@ -11,11 +11,20 @@
     'description': '''
         Order Management Controls:
         ==========================
-        Hide or Show the New Order button.
+        Hide or Show the New Order button (+).
         Hide or Show the Delete Order option.
         Hide or Show the Customer Selection button.
         Hide or Show the Actions button.
         Hide or Show the Payment button.
+        Hide or Show the Note button.
+        Hide or Show the Transfer Order button.
+
+        Navbar Controls:
+        ================
+        Hide or Show the Barcode Scanner button.
+        Hide or Show the Search Products input.
+        Hide or Show the Customer Display button.
+        Hide or Show the Product Info popup (long-press).
 
         Configurable Access Permissions:
         ==============================

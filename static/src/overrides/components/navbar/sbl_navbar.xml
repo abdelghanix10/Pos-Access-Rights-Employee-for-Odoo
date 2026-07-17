@@ -7,6 +7,21 @@
             <attribute name="t-if">!this.pos.cashier?.sbl_hide_pos_dropdown_navbar</attribute>
         </xpath>
 
+        <!-- Hide Barcode Scanner button in navbar -->
+        <xpath expr="//button[@t-on-click='onClickScan']" position="attributes">
+            <attribute name="t-if">(isBarcodeScannerSupported() and ['ProductScreen', 'TicketScreen'].includes(this.pos.router.state.current) and !pos.config.module_pos_restaurant) and (!this.pos.cashier or !this.pos.cashier.sbl_hide_pos_barcode_button)</attribute>
+        </xpath>
+
+        <!-- Hide Search Input in navbar -->
+        <xpath expr="//Input" position="attributes">
+            <attribute name="t-if">pos.showSearchButton() and (!this.pos.cashier or !this.pos.cashier.sbl_hide_pos_search_input)</attribute>
+        </xpath>
+
+        <!-- Hide Customer Display in dropdown -->
+        <xpath expr="//span[@t-on-click='openCustomerDisplay']" position="attributes">
+            <attribute name="t-if">(!this.pos.cashier or !this.pos.cashier.sbl_hide_pos_customer_display)</attribute>
+        </xpath>
+
         <!-- Hide Install App dropdown item -->
         <xpath expr="//DropdownItem[contains(@onSelected, 'window.open(this.appUrl)')]" position="attributes">
             <attribute name="t-if">!isDisplayStandalone and this.pos.cashier?._role != 'minimal' and !this.pos.cashier?.sbl_hide_pos_dropdown_install_app</attribute>

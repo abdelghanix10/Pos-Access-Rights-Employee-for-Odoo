@@ -4,6 +4,12 @@
         <xpath expr="//SelectPartnerButton" position="attributes">
             <attribute name="t-if">(!pos.cashier or !pos.cashier.sbl_hide_pos_customer_selection_button) and !props.showRemainingButtons</attribute>
         </xpath>
+        <xpath expr="//t[contains(@t-if, 'showRemainingButtons')]//InternalNoteButton" position="attributes">
+            <attribute name="t-if">(!pos.cashier or !pos.cashier.sbl_hide_pos_note_button)</attribute>
+        </xpath>
+        <xpath expr="//button[@t-on-click='() => this.pos.clickSaveOrder()']" position="attributes">
+            <attribute name="t-if">(!pos.cashier or !pos.cashier.sbl_hide_pos_transfer_order_button) and !props.showRemainingButtons and !ui.isSmall</attribute>
+        </xpath>
         <xpath expr="//button[@t-on-click='props.onClickMore']" position="attributes">
             <attribute name="t-if">(!pos.cashier or !pos.cashier.sbl_hide_pos_actions_button) and !props.showRemainingButtons and !ui.isSmall and props.onClickMore</attribute>
         </xpath>

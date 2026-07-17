@@ -16,6 +16,12 @@
                         <group>
                             <field name="sbl_hide_pos_customer_selection_button" widget="boolean_toggle"/>
                             <field name="sbl_hide_pos_payment" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_note_button" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_transfer_order_button" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_barcode_button" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_search_input" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_customer_display" widget="boolean_toggle"/>
+                            <field name="sbl_hide_pos_product_info" widget="boolean_toggle"/>
                         </group>
                     </group>
                     <group name="sbl_pos_numpad" string="Numpad">

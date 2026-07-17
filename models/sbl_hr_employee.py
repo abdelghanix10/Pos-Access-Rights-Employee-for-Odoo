@@ -18,6 +18,12 @@ class ResUsers(models.Model):
     sbl_disable_pos_discount_button = fields.Boolean(related='employee_id.sbl_disable_pos_discount_button', readonly=False)
     sbl_hide_pos_payment = fields.Boolean(related='employee_id.sbl_hide_pos_payment', readonly=False)
     sbl_disable_pos_change_price = fields.Boolean(related='employee_id.sbl_disable_pos_change_price', readonly=False)
+    sbl_hide_pos_note_button = fields.Boolean(related='employee_id.sbl_hide_pos_note_button', readonly=False)
+    sbl_hide_pos_transfer_order_button = fields.Boolean(related='employee_id.sbl_hide_pos_transfer_order_button', readonly=False)
+    sbl_hide_pos_barcode_button = fields.Boolean(related='employee_id.sbl_hide_pos_barcode_button', readonly=False)
+    sbl_hide_pos_search_input = fields.Boolean(related='employee_id.sbl_hide_pos_search_input', readonly=False)
+    sbl_hide_pos_customer_display = fields.Boolean(related='employee_id.sbl_hide_pos_customer_display', readonly=False)
+    sbl_hide_pos_product_info = fields.Boolean(related='employee_id.sbl_hide_pos_product_info', readonly=False)
     sbl_hide_pos_dropdown_navbar = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_navbar', readonly=False)
     sbl_hide_pos_dropdown_install_app = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_install_app', readonly=False)
     sbl_hide_pos_dropdown_cash_inout = fields.Boolean(related='employee_id.sbl_hide_pos_dropdown_cash_inout', readonly=False)
@@ -37,6 +43,9 @@ class ResUsers(models.Model):
             'sbl_hide_pos_customer_selection_button', 'sbl_hide_pos_actions_button',
             'sbl_hide_pos_numpad', 'sbl_disable_pos_numpad_plus_minus', 'sbl_disable_pos_qty',
             'sbl_disable_pos_discount_button', 'sbl_hide_pos_payment', 'sbl_disable_pos_change_price',
+            'sbl_hide_pos_note_button', 'sbl_hide_pos_transfer_order_button',
+            'sbl_hide_pos_barcode_button', 'sbl_hide_pos_search_input', 'sbl_hide_pos_customer_display',
+            'sbl_hide_pos_product_info',
             'sbl_hide_pos_dropdown_navbar', 'sbl_hide_pos_dropdown_install_app',
             'sbl_hide_pos_dropdown_cash_inout', 'sbl_hide_pos_dropdown_reload_data',
             'sbl_hide_pos_dropdown_create_product', 'sbl_hide_pos_dropdown_barcode_scanner',
@@ -95,6 +104,36 @@ class HrEmployeeBase(models.Model):
     sbl_disable_pos_change_price = fields.Boolean(
         string='Disable POS Change Price',
         help='If checked, the Change Price functionality will be disabled for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_note_button = fields.Boolean(
+        string='Hide POS Note Button',
+        help='If checked, the Note button will be hidden for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_transfer_order_button = fields.Boolean(
+        string='Hide POS Transfer Order Button',
+        help='If checked, the Transfer Order button will be hidden for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_barcode_button = fields.Boolean(
+        string='Hide POS Barcode Button',
+        help='If checked, the Barcode Scanner button will be hidden for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_search_input = fields.Boolean(
+        string='Hide POS Search Input',
+        help='If checked, the Search Products input will be hidden for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_customer_display = fields.Boolean(
+        string='Hide POS Customer Display',
+        help='If checked, the Customer Display option will be hidden for this employee in the POS interface.',
+        default=False,
+    )
+    sbl_hide_pos_product_info = fields.Boolean(
+        string='Hide POS Product Info Popup',
+        help='If checked, the Product Info popup on long-press will be hidden for this employee in the POS interface.',
         default=False,
     )
     sbl_hide_pos_dropdown_navbar = fields.Boolean(
@@ -156,6 +195,9 @@ class HrEmployeeBase(models.Model):
             'sbl_hide_pos_customer_selection_button', 'sbl_hide_pos_actions_button',
             'sbl_hide_pos_numpad', 'sbl_disable_pos_numpad_plus_minus', 'sbl_disable_pos_qty',
             'sbl_disable_pos_discount_button', 'sbl_hide_pos_payment', 'sbl_disable_pos_change_price',
+            'sbl_hide_pos_note_button', 'sbl_hide_pos_transfer_order_button',
+            'sbl_hide_pos_barcode_button', 'sbl_hide_pos_search_input', 'sbl_hide_pos_customer_display',
+            'sbl_hide_pos_product_info',
             'sbl_hide_pos_dropdown_navbar', 'sbl_hide_pos_dropdown_install_app',
             'sbl_hide_pos_dropdown_cash_inout', 'sbl_hide_pos_dropdown_reload_data',
             'sbl_hide_pos_dropdown_create_product', 'sbl_hide_pos_dropdown_barcode_scanner',
